@@ -1,6 +1,7 @@
+package com.fag.V1;
 
 public class Funcionario {
-    private String nome;
+	private String nome;
     private String cpf;
     private String cargo;
     private double salarioBase;
@@ -9,20 +10,20 @@ public class Funcionario {
     private boolean insalubre;
     private int numeroDependentes;
 
-    // Constantes de descontos
+    
     private static final double FGTS_TAXA = 0.08; // 8%
-    private static final double INSS_TAXA = 0.11; // 11%, simplificado
-    private static final double IRRF_FAIXA_1 = 0.075; // 7.5%, exemplo de faixa
+    private static final double INSS_TAXA = 0.11; // 11%, 
+    private static final double IRRF_FAIXA_1 = 0.075; // 7.5%, 
     private static final double VALE_TRANSPORTE_TAXA = 0.06; // 6%
-    private static final double VALE_ALIMENTACAO_TAXA = 0.1; // 10%, exemplo
+    private static final double VALE_ALIMENTACAO_TAXA = 0.1; // 10%, 
 
-    // Constantes de benefícios
-    private static final double HORA_EXTRA_TAXA = 1.5; // 50% de acréscimo
+    
+    private static final double HORA_EXTRA_TAXA = 1.5; // 50% 
     private static final double ADICIONAL_NOTURNO_TAXA = 0.2; // 20%
-    private static final double ADICIONAL_INSALUBRIDADE = 200; // Valor fixo para exemplo
-    private static final double SALARIO_FAMILIA_POR_DEPENDENTE = 50; // Valor por dependente
+    private static final double ADICIONAL_INSALUBRIDADE = 200; // Valor 
+    private static final double SALARIO_FAMILIA_POR_DEPENDENTE = 50; 
 
-    // Construtor
+    
     public Funcionario(String nome, String cpf, String cargo, double salarioBase, int horasExtras, boolean trabalhaNoturno, boolean insalubre, int numeroDependentes) {
         this.nome = nome;
         this.cpf = cpf;
@@ -34,7 +35,7 @@ public class Funcionario {
         this.numeroDependentes = numeroDependentes;
     }
 
-    // Métodos de cálculo de descontos
+   
     public double calcularFGTS() {
         return salarioBase * FGTS_TAXA;
     }
@@ -60,7 +61,7 @@ public class Funcionario {
         return calcularINSS() + calcularIRRF() + calcularValeTransporte() + calcularValeAlimentacao();
     }
 
-    // Métodos de cálculo de benefícios
+    
     public double calcularHorasExtras(double valorHora) {
         return horasExtras * valorHora * HORA_EXTRA_TAXA;
     }
@@ -81,7 +82,7 @@ public class Funcionario {
         return calcularHorasExtras(valorHora) + calcularAdicionalNoturno(valorHora) + calcularAdicionalInsalubridade() + calcularSalarioFamilia();
     }
 
-    // Método para calcular o salário líquido
+    
     public double calcularSalarioLiquido(double valorHora) {
         return salarioBase - calcularTotalDescontos() + calcularTotalBeneficios(valorHora);
     }
@@ -185,5 +186,4 @@ public class Funcionario {
     public static double getSalarioFamiliaPorDependente() {
         return SALARIO_FAMILIA_POR_DEPENDENTE;
     }
-    
 }

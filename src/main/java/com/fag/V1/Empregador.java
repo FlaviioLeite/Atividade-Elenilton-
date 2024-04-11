@@ -1,14 +1,16 @@
+package com.fag.V1;
+
 public class Empregador {
-    private String nome;
+	private String nome;
     private String cnpj;
 
-    // Construtor
+    
     public Empregador(String nome, String cnpj) {
         this.nome = nome;
         this.cnpj = cnpj;
     }
 
-    // Métodos getters e setters
+    
     public String getNome() {
         return nome;
     }
