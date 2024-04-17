@@ -49,8 +49,15 @@ public class FolhaPagamentoApp {
             Document doc = new Document(pdfDoc);
 
             
-            doc.add(new Paragraph("Respostas da Folha de Pagamento"));
-            doc.add(new Paragraph("Descontos:"));
+            doc.add(new Paragraph("Folha de Pagamento"));
+            doc.add(new Paragraph("\nDados Do Empregador:"));
+            doc.add(new Paragraph("Nome: " + nomeEmpregador));
+            doc.add(new Paragraph("CNPJ: " + cnpj));
+            doc.add(new Paragraph("\nDados Do Funcionario:"));
+            doc.add(new Paragraph("Nome: " + nomeFuncionario));
+            doc.add(new Paragraph("CPF: " + cpf));
+            doc.add(new Paragraph("Salario Base: " + salarioBase));
+            doc.add(new Paragraph("\nDescontos:"));
             doc.add(new Paragraph("FGTS: R$ " + funcionario.calcularFGTS()));
             doc.add(new Paragraph("INSS: R$ " + funcionario.calcularINSS()));
             doc.add(new Paragraph("IRRF: R$ " + funcionario.calcularIRRF()));
@@ -69,7 +76,7 @@ public class FolhaPagamentoApp {
             doc.close();
 
             
-            System.out.println("Respostas salvas em " + outputPdf);
+            System.out.println("Respostas Salvas " + outputPdf);
 
             scanner.close();
         } catch (IOException | java.io.IOException e) {

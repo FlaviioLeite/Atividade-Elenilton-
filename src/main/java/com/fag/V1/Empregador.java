@@ -8,6 +8,7 @@ public class Empregador {
     public Empregador(String nome, String cnpj) {
         this.nome = nome;
         this.cnpj = cnpj;
+        
     }
 
     
@@ -26,4 +27,5 @@ public class Empregador {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
+    
 }
